@@ -1,6 +1,7 @@
 package net.acetheeldritchking.wyverns_and_dragons;
 
 import com.mojang.logging.LogUtils;
+import net.acetheeldritchking.wyverns_and_dragons.item.WADItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,6 +22,8 @@ public class WyvernsAndDragons
     public WyvernsAndDragons()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        WADItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
