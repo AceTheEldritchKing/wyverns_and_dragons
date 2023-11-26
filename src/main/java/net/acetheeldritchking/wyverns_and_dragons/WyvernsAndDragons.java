@@ -1,7 +1,7 @@
 package net.acetheeldritchking.wyverns_and_dragons;
 
 import com.mojang.logging.LogUtils;
-import net.acetheeldritchking.wyverns_and_dragons.entity.dragon.DragonRenderer;
+import net.acetheeldritchking.wyverns_and_dragons.entity.dragon.client.DragonRenderer;
 import net.acetheeldritchking.wyverns_and_dragons.entity.WADEntities;
 import net.acetheeldritchking.wyverns_and_dragons.item.WADItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;

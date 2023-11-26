@@ -1,8 +1,9 @@
-package net.acetheeldritchking.wyverns_and_dragons.entity.dragon;
+package net.acetheeldritchking.wyverns_and_dragons.entity.dragon.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.acetheeldritchking.wyverns_and_dragons.WyvernsAndDragons;
+import net.acetheeldritchking.wyverns_and_dragons.entity.dragon.DragonEntity;
 import net.acetheeldritchking.wyverns_and_dragons.entity.dragon.client.WADDragonModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
