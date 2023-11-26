@@ -1,10 +1,10 @@
-package net.acetheeldritchking.wyverns_and_dragons.entity;
+package net.acetheeldritchking.wyverns_and_dragons.entity.dragon;
 
+import net.acetheeldritchking.wyverns_and_dragons.entity.goals.FlyAroundGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -29,8 +29,15 @@ public class DragonEntity extends Monster implements IAnimatable {
 
     private AnimationFactory factory = new AnimationFactory(this);
 
+    private boolean isFlying;
+    private float flySpeed;
+    private int maxFlyHeight;
+
     public DragonEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+        this.isFlying = false;
+        this.flySpeed = 0.5f;
+        this.maxFlyHeight = 128;
     }
 
     public static AttributeSupplier setAttributes() {
@@ -45,7 +52,7 @@ public class DragonEntity extends Monster implements IAnimatable {
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2D, false));
-        this.goalSelector.addGoal(3, new RangedBowAttackGoal<>(this, 1.2D, 20, 15.0F));
+        //this.goalSelector.addGoal(3, new RangedBowAttackGoal<>(this, 1.2D, 20, 15.0F));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -55,15 +62,16 @@ public class DragonEntity extends Monster implements IAnimatable {
         this.targetSelector.addGoal(9, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(10, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
         this.targetSelector.addGoal(11, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
+
     }
 
    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dragon.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.aces_wyverns_and_dragons.walk_cycle", true));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.dragon.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.aces_wyverns_and_dragons.idle", true));
         return PlayState.CONTINUE;
     }
 

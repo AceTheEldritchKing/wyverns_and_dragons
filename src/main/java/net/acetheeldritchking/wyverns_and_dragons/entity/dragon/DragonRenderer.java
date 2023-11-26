@@ -1,8 +1,9 @@
-package net.acetheeldritchking.wyverns_and_dragons.entity;
+package net.acetheeldritchking.wyverns_and_dragons.entity.dragon;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.acetheeldritchking.wyverns_and_dragons.WyvernsAndDragons;
+import net.acetheeldritchking.wyverns_and_dragons.entity.dragon.client.WADDragonModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -18,7 +19,7 @@ public class DragonRenderer extends GeoEntityRenderer<DragonEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(DragonEntity instance) {
-        return new ResourceLocation(WyvernsAndDragons.MOD_ID, "textures/entity/Dragon_texture.png");
+        return new ResourceLocation(WyvernsAndDragons.MOD_ID, "textures/entity/dragon_texture.png");
     }
 
     @Override

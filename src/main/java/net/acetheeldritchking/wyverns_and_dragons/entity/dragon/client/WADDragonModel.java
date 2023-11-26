@@ -1,13 +1,14 @@
-package net.acetheeldritchking.wyverns_and_dragons.entity;
+package net.acetheeldritchking.wyverns_and_dragons.entity.dragon.client;
 
 import net.acetheeldritchking.wyverns_and_dragons.WyvernsAndDragons;
+import net.acetheeldritchking.wyverns_and_dragons.entity.dragon.DragonEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class WADDragonModel extends AnimatedGeoModel<DragonEntity> {
     @Override
     public ResourceLocation getModelResource(DragonEntity object) {
-        return new ResourceLocation(WyvernsAndDragons.MOD_ID, "geo/dragon.geo.json");
+        return new ResourceLocation(WyvernsAndDragons.MOD_ID, "geo/dragon_geo.json");
     }
 
     @Override
@@ -17,6 +18,6 @@ public class WADDragonModel extends AnimatedGeoModel<DragonEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(DragonEntity animatable) {
-        return new ResourceLocation(WyvernsAndDragons.MOD_ID, "animations/dragon.animation.json");
+        return new ResourceLocation(WyvernsAndDragons.MOD_ID, "animations/dragon_animation.json");
     }
 }

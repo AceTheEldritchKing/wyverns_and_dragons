@@ -1,14 +1,12 @@
 package net.acetheeldritchking.wyverns_and_dragons;
 
 import com.mojang.logging.LogUtils;
-import net.acetheeldritchking.wyverns_and_dragons.entity.DragonEntity;
-import net.acetheeldritchking.wyverns_and_dragons.entity.DragonRenderer;
+import net.acetheeldritchking.wyverns_and_dragons.entity.dragon.DragonRenderer;
 import net.acetheeldritchking.wyverns_and_dragons.entity.WADEntities;
 import net.acetheeldritchking.wyverns_and_dragons.item.WADItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -29,7 +27,9 @@ public class WyvernsAndDragons
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        // Items
         WADItems.register(modEventBus);
+        // Entities
         WADEntities.ENTITIES.register(modEventBus);
 
         // Geckolib
