@@ -59,9 +59,9 @@ public class DragonEntity extends Monster implements IAnimatable {
         this.goalSelector.addGoal(1, new FlyAroundGoal(this));
 
         this.targetSelector.addGoal(8, new NearestAttackableTargetGoal<>(this, Player.class, true));
-        this.targetSelector.addGoal(9, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
-        this.targetSelector.addGoal(10, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
-        this.targetSelector.addGoal(11, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
+        this.targetSelector.addGoal(8, new NearestAttackableTargetGoal<>(this, AbstractVillager.class, false));
+        this.targetSelector.addGoal(8, new NearestAttackableTargetGoal<>(this, IronGolem.class, true));
+        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
 
     }
 
